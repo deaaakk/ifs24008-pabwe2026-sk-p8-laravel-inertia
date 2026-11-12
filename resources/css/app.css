@@ -104,3 +104,23 @@
     border-left: 4px solid var(--color-saffron);
     color: var(--color-muted);
 }
+
+/* Perbaikan kontras isi Markdown (WCAG AA, rasio >= 4.5:1).
+   Awalan "body" membuat aturan ini lebih kuat dari CSS bawaan TOAST UI. */
+body .toastui-editor-contents blockquote,
+body .toastui-editor-contents blockquote p {
+    color: var(--color-muted);
+}
+
+body .toastui-editor-contents del {
+    color: #595959;
+}
+
+body .toastui-editor-contents :not(pre) > code {
+    color: #9b1c4b;
+    background-color: #f9f2f4;
+}
+
+body .toastui-editor-contents a {
+    color: var(--color-primary);
+}
