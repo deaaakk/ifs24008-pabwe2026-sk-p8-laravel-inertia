@@ -280,7 +280,7 @@ class MemberPostTest extends TestCase
         $first = $post->refresh()->cover_image_path;
         Storage::disk('public')->assertExists($first);
 
-        $this->post("/dashboard/posts/{$post->id}/cover", ['cover' => UploadedFile::fake()->image('b.webp')]);
+        $this->post("/dashboard/posts/{$post->id}/cover", ['cover' => UploadedFile::fake()->image('b.png')]);
         $second = $post->refresh()->cover_image_path;
         Storage::disk('public')->assertMissing($first);
         Storage::disk('public')->assertExists($second);
